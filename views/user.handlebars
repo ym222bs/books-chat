@@ -1,0 +1,35 @@
+<div class='container'>
+
+    <form action='/' method='POST' class='SearchForm'>
+        <input id='searchInput' class='form-control' name='searchField' placeholder='Enget a title or author..'>
+        <button id='button2' type='submit' class='btn btn-danger btn-lg btn-block'>Search</button>
+    </form>
+
+    <ul id='bookList'>
+        {{#each bookInfo}}
+        <li>
+            <table class='table' name='table' id='table2'>
+                <tbody>
+                    <tr>
+                        <th scope='row' width='15%'>
+                            <img src='{{img}}' id='img'>
+                        </th>
+                        <td>
+                            <span class='font-weight-bold' name='title'>{{title}}</span>
+                            <br>
+                            <span class='font-italic' name='authors'>{{authors}}, {{year}}</span>
+                            <br> 
+                            {{cat}}
+                            <br>
+                            <p>{{description}}</p>
+                            <form action='/delete/{{id}}' method='POST'>
+                                <input type='submit' class='btn btn-outline-danger btn-sm' value='Delete from favourites'>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        {{/each}}
+    </ul>
+</div>

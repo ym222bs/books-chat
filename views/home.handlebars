@@ -1,0 +1,68 @@
+<div class="container">
+    <div id="welcomeText">{{title}}</div>
+    <div id="welcomeText-t">{{title2}}</div>
+    <div id="mainContainer">
+        <div>
+            <form action="/" method="POST" id="searchField" class="SearchForm">
+                <input id="searchInput" class="form-control" name="searchField" list="optionsList" placeholder="Enter a title or author..">
+
+                <button id="button" type="submit" class="btn btn-danger btn-lg btn-block">Search</button>
+
+            </form>
+            <ul id="bookList">
+
+                {{#each bookInfo}} {{!-- 'data-*' syntax används för att lagra data i elementet tillhörande data-*, category i detta fall
+                --}}
+                <li class='book-list-entry' data-category='{{cat}}'>
+                    <table class="table" name="table" id="table">
+                        <tbody>
+                            <tr>
+                                <th scope='row' width='15%'>
+                                    <img src='{{img}}' id='img'>
+                                </th>
+                                <td>
+                                    <span class="font-weight-bold" name="title">{{title}}</span>
+                                    <br>
+                                    <span class="font-italic" name="authors">{{authors}}, {{year}}</span>
+                                    <br> {{cat}}
+                                    <br>
+                                    <p>{{description}}</p>
+                                    {{#if session}} {{#if isFavourite}}
+                                    <form action="/delete/{{id}}" method="POST">
+                                        <input type="submit" class="btn btn-outline-danger btn-sm" value="Delete from favourites">
+                                    </form>
+                                    {{else}}
+                                    <button id="favouriteButton" class="btn btn-outline-dark btn-sm" onclick="addToFavourites('{{id}}')" class="btn">Add to favourites</button>
+                                    {{/if}} {{/if}}
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div>
+            <script>
+                let bookList = document.querySelectorAll('#bookList button#favouriteButton')
+                bookList.forEach((a, i) => {
+                    a.addEventListener('click', event => {
+                        bookList[i].style.display = 'none'
+                    })
+                })
+                let input = document.getElementById('searchInput')
+                if (Window.localStorage.getItem('search')) {
+                    input.value = Window.localStorage.getItem('search')
+                    document.getElementById('searchField').submit()
+                }
+                input.addEventListener('change', (e) => {
+                    Window.localStorage.setItem('search', input.value)
+                })
+            </script> {{#each sorteradeCategories}}
+            <button class="btn btn-info" id="kategori" onclick='onClickedCategory("{{this.category}}")'>{{this.category}}, {{this.count}}</button>
+            {{!-- this = antalet böcker/kategori --}} 
+            {{/each}}
+        </div>
+    </div>
+</div>

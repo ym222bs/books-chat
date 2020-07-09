@@ -1,0 +1,22 @@
+ {{#if flash}}
+<div class='alert alert-{{flash.type}} alert-dismissible fade show' role='alert' id='alert'>
+    {{flash.message}}
+</div>
+{{/if}} 
+
+{{!-- <script>
+    if ('{{flash}}') {
+        console.log('bookList')
+        $(document).ready(() => {
+            window.setTimeout(() => {
+
+                const alert = $('#alert')
+                alert.fadeTo(500, 0).slideUp(1500, () => {
+                    $(this).remove()
+                    console.log('this', this)
+                })
+            }, 5000)
+
+        })
+    }
+</script> --}}

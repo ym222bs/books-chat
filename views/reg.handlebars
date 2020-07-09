@@ -1,0 +1,42 @@
+<div class='container'>
+
+  <h1>{{title}}</h1>
+
+  <div class='container-fluid'>
+    <div class='row'>
+      <div class='col-md-4 col-sm-4 col-xs-12'></div>
+      <div class='col-md-4 col-sm-4 col-xs-12'>
+        <form action='/register' method='POST' class='form-container'>
+          {{#if errors }}
+          <section class='errors'>
+            <ul>
+              {{#each errors }}
+              <li>{{ this.msg }}</li>
+              {{/each}}
+            </ul>
+          </section>
+          {{/if}}
+          <div class='form-group'>
+            <p>
+              <h2>Sign Up</h2>
+              {{> flash}}
+            </p>
+            <label for='exampleInputEmail1'>Username</label>
+            <input type='text' class='form-control' name='username' placeholder='Enter username'>
+            <small id='emailHelp' class='form-text text-muted'>Please choose a username.</small>
+          </div>
+          <div class='form-group'>
+            <label for='exampleInputPassword1'>Password</label>
+            <input type='password' class='form-control' name='password' placeholder='Password'>
+          </div>
+          <div class='form-group'>
+            <label for='exampleInputPassword2'>Password</label>
+            <input type='password' class='form-control' name='passwordComfirm' placeholder='Repeat password'>
+            <small id='emailHelp' class='form-text text-muted'>Comfirm the password.</small>
+          </div>
+          <button type='submit' class='btn btn-success btn-lg btn-block'>Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

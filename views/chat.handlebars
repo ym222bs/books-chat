@@ -1,0 +1,32 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js' defer></script>
+
+
+<div id='theWhole'>
+
+    <div id='little-corner'></div>
+
+    <div id='active-users' class='active-users-container chatHeader'>
+        <div id='users-list'></div>
+    </div>
+    <div id='header-above-messages'>
+        <h4 class='chatHeader' id='chatHeader'>{{username}}</h4>
+    </div>
+
+    <div id='message-list'>
+        <ul id='chatMessages' class='user'>
+    </div>
+    <div id='input'>
+        <div id='feedback'></div>
+        {{!-- <input id='textarea' class='form-control'></input>
+        <button id='send' class='btn btn-info'>Send...</button> --}}
+
+        <div class='input-group'>
+            <input type='text' class='form-control' id='textarea' />
+            <span class='input-group-btn'>
+                <button class='btn btn-info' type='button' id='send'>Send ...</button>
+            </span>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,30 @@
+server {
+        listen 443;
+        ssl on;
+        ssl_certificate /var/www/BookApp/config/sslcerts/cert.pem;
+        ssl_certificate_key /var/www/BookApp/config/sslcerts/key.pem;
+        server_name localhost;
+
+        gzip on;
+        gzip_comp_level 6;
+        gzip_vary on;
+        gzip_min_length  1000;
+        gzip_proxied any;
+        gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+        gzip_buffers 16 8k;
+
+        location ~ ^/(images/|img/|javascript/|js/|css/|stylesheets/|flash/|media/|static/|robots.txt|humans.txt|favicon.ico) {
+                root /var/www/BookApp/public;
+                access_log off;
+                expires max;
+        }
+
+        location / {
+                proxy_pass http://localhost:8080;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
