@@ -31,7 +31,7 @@
     "handlebars": "^4.7.6",
     "helmet": "^3.23.3",
     "joi": "^13.2.0",
-    "mongodb": "^3.1.0-beta4",
+    "mongodb": "^3.1.13",
     "mongoose": "^5.9.21",
     "socket.io": "^2.1.0"
   },
