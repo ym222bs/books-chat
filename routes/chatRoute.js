@@ -1,7 +1,8 @@
 const router = require('express').Router()
 let nicknames = []
 
-router.route('/chat')
+router
+  .route('/chat')
   .get((req, res) => res.render('chat', { username: req.session.username }))
 
 module.exports.router = router
@@ -15,15 +16,16 @@ module.exports.start = function (io) {
       updateNicknameList()
     })
     // Update the list of active users
-    function updateNicknameList () {
-      console.log('nick Array', nicknames)
+    function updateNicknameList() {
       io.sockets.emit('usernames', nicknames)
     }
     // On event..
     socket.on('send message', (data) => {
       // ..send to all sockets
-      console.log('send message')
-      io.sockets.emit('new message', { message: data.message, nickname: socket.nickname })
+      io.sockets.emit('new message', {
+        message: data.message,
+        nickname: socket.nickname,
+      })
     })
     socket.on('typing', (data) => {
       socket.broadcast.emit('typing', data)
