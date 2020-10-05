@@ -1,243 +1,251 @@
 :root {
-    --chat-border-colour: rgb(194, 187, 187);
+  --chat-border-colour: rgb(194, 187, 187);
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: rgb(251, 253, 253);
-    color: rgb(55, 57, 69);
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(251, 253, 253);
+  color: rgb(55, 57, 69);
 
-    /* An attempt to make the grid occupy the remaining height */
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 68px auto;
+  /* An attempt to make the grid occupy the remaining height */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 68px auto;
 
-    /* Bakground picture */
-    background-image: url('books.jpg');
+  /* Bakground picture */
+  background-image: url('books.jpg');
 
-    /* Full height */
-    height: 100%;
+  /* Full height */
+  height: 100%;
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
 }
 
 body,
 html {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 #alert {
-    height: 45.833px;
-    border-radius: 8px;
-    height: auto;
+  height: 45.833px;
+  border-radius: 8px;
+  height: auto;
 }
 #navLoggan {
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  color: white;
+}
+
+#navigation-bar {
+  background-color: #c52e3d;
+}
+.nav-ul a {
+  color: white;
 }
 
 #mainContainer {
-    display: grid;
-    grid-template-columns: 90% 10%;
-    grid-column-gap: 10px;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  grid-column-gap: 10px;
 }
 /*Välkomst-text i maincontainer*/
 #welcomeText {
-    font-family: 'Pacifico', cursive;
-    color: white;
-    text-shadow: 6px 1px rgb(228, 150, 150);
-    font-size: 11vw;
-    line-height: 1.2;
+  font-family: 'Pacifico', cursive;
+  color: white;
+  text-shadow: 6px 1px rgb(228, 150, 150);
+  font-size: 11vw;
+  line-height: 1.2;
 }
 
 #welcomeText-t {
-    color: white;
-    font-size: 2vw;
+  color: white;
+  font-size: 2vw;
 }
 
 /* För alla typer av Forms*/
 .form-container {
-    padding: 20px 30px;
-    margin-top: 20vh;
-    -webkit-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    border-radius: 8px;
+  padding: 20px 30px;
+  margin-top: 20vh;
+  -webkit-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
 }
 
 /* Boksektion - boklistan */
 ul {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 #bookList {
-    background-color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(255, 255, 255, 0.87);
 }
 .table {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 .table td {
-    border-top: none;
+  border-top: none;
 }
 .table th {
-    border-top: none;
+  border-top: none;
 }
 ul {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 /* Default bild för bokobjekt där bild saknas */
 #img {
-    width: 129px;
-    padding: 0px;
+  width: 129px;
+  padding: 0px;
 }
 
 .img {
-    box-shadow: 3px 3px 5px #aaa;
+  box-shadow: 3px 3px 5px #aaa;
 }
 
 /* Sökfältet, hela form */
 .SearchForm {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .searchInput {
-    padding: 15px;
+  padding: 15px;
 }
 
 #searchInput {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.87);
-    border-radius: 8px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 8px;
 }
 
 /* Search button och andra */
 button {
-    margin-top: 5px;
-    margin-bottom: 0px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 #button,
 #button2 {
-    border-radius: 8px;
-    margin-top: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
 }
 
 #kategori {
-    float: left;
+  float: left;
 }
 
 #logout {
-    margin-left: 600px;
+  margin-left: 600px;
 }
 
 #logout-btn {
-    margin-left: 30rem !important;
+  margin-left: 30rem !important;
 }
 
 /* Stil för text */
 h1 {
-    text-align: center;
-    color: white;
-    font-weight: bold;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 h2 {
-    text-align: center;
-    margin-top: 10px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* FORM inputfält registration */
 
 .form-container {
-    background-color: rgba(255, 255, 255, 0.87);
+  background-color: rgba(255, 255, 255, 0.87);
 }
 
 /* CHAT ---- */
-#theWhole {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 60px calc(100vh - 60px - 70px - 68px) 70px;
-    background-color: rgba(255, 255, 255, 0.87);
+#chat-wrapper {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 60px calc(100vh - 60px - 70px - 68px) 70px;
+  background-color: rgba(255, 255, 255, 0.87);
 }
 .chatHeader {
-    padding: 8px;
-    border-right: 2px solid var(--chat-border-colour);
+  padding: 8px;
+  border-right: 2px solid var(--chat-border-colour);
 }
 
 #active-users {
-    padding: 10px;
-    font-size: 30px;
+  padding: 10px;
+  font-size: 30px;
 }
 #users-list {
-    white-space: pre;
+  white-space: pre;
 }
 
 /* Sstil för text i chatmessage-box*/
 .user {
-    font-weight: bold;
+  font-weight: bold;
 }
 .messageStyle {
-    font-weight: normal;
-    font-size: medium;
+  font-weight: normal;
+  font-size: medium;
 }
 .time {
-    color: rgb(87, 87, 87);
-    font-size: small;
-    font-weight: normal;
+  color: rgb(87, 87, 87);
+  font-size: small;
+  font-weight: normal;
 }
 
 #chatMessages {
-    padding: 10px;
+  padding: 10px;
 }
 
 #textarea {
-    /* padding: 9px;
+  /* padding: 9px;
     display: inline-block;
     width: 90%; */
-    border-radius: 0.25rem;
-    width: 3%;
+  border-radius: 0.25rem;
+  width: 3%;
 }
 
 #send {
-    float: left;
-    padding: 9px;
-    margin: 2px;
+  float: left;
+  padding: 9px;
+  margin: 2px;
 }
 
 #little-corner {
-    grid-row: 1;
-    grid-column: 1;
-    border-bottom: 1px solid var(--chat-border-colour);
+  grid-row: 1;
+  grid-column: 1;
+  border-bottom: 1px solid var(--chat-border-colour);
 }
 
 #active-users {
-    grid-row: 2/4;
-    grid-column: 1;
+  grid-row: 2/4;
+  grid-column: 1;
 }
 
 #header-above-messages {
-    grid-column: 2;
-    padding: 5px;
-    border-bottom: 1px solid var(--chat-border-colour);
+  grid-column: 2;
+  padding: 5px;
+  border-bottom: 1px solid var(--chat-border-colour);
 }
 
 #message-list {
-    grid-row: 2;
-    grid-column: 2;
-    border-left: 1px solid var(--chat-border-colour);
-    overflow-y: scroll;
+  grid-row: 2;
+  grid-column: 2;
+  border-left: 1px solid var(--chat-border-colour);
+  overflow-y: scroll;
 }
 
 #input {
-    grid-row: 3;
-    grid-column: 2;
-    display: inline-block;
-    border-left: 1px solid var(--chat-border-colour);
+  grid-row: 3;
+  grid-column: 2;
+  display: inline-block;
+  border-left: 1px solid var(--chat-border-colour);
 }

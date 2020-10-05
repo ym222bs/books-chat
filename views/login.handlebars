@@ -1,21 +1,18 @@
 <div class='container'>
-
   {{#if error}}
   <p>
     Error: {{error}}
   </p>
-  {{/if}} 
-
+  {{/if}}
   <div class='container-fluid'>
     <div class='row'>
       <div class='col-md-4 col-sm-4 col-xs-12'></div>
       <div class='col-md-4 col-sm-4 col-xs-12'>
         <form action='/login' method='POST' class='form-container'>
-
           <div class='form-group'>
             <p>
-              <h2>Log In</h2>
-              {{> flash}}
+            <h2>Log In</h2>
+            {{> flash}}
             </p>
             <label for='exampleInputEmail1'>Username</label>
             <input type='text' class='form-control' name='username' placeholder='Enter username'>
